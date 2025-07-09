@@ -3,7 +3,7 @@ const { obterLivros, incluir, excluir } = require("../modelo/livro-dao");
 router = express.Router();
 
 router.get("/", async (req, res) => {
-  const livros = await obterLivros;
+  const livros = await obterLivros();
   res.json(livros);
 });
 
