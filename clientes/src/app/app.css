@@ -1,0 +1,28 @@
+#menu {
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#menu a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+#menu a:hover {
+  background-color: #e94d35;
+  color: white;
+  transform: translateY(-2px);
+}
+
+#menu a:active {
+  transform: translateY(0);
+}

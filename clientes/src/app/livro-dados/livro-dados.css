@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+}
+
+.card-header {
+  background-color: #e94d35;
+}
+.btn:hover {
+  background-color: #e94d35;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn {
+  background-color: #e94d35;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
