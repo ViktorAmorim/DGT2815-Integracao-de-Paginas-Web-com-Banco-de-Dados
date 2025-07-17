@@ -1,0 +1,52 @@
+/* Estilos específicos do componente LivroListaComponent */
+.container {
+  max-width: 80%;
+}
+
+/* Estilos para a tabela */
+.table {
+  border-radius: 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o cabeçalho da tabela */
+.table thead th {
+  background-color: #2c2c2c;
+  height: 2rem;
+  color: #ffffff;
+  border: none;
+  padding: 1px 15px;
+  font-size: 1rem;
+}
+.table tbody td {
+  vertical-align: middle;
+  padding: 1rem 0.75rem;
+}
+.table tbody tr:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+  background-color: #f5f5f5;
+}
+
+/* Estilos para o botão de exclusão */
+.btn-excluir {
+  background-color: #f0192f;
+  border-color: #f0192f;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+.btn-excluir:hover {
+  background-color: #f35464;
+  border-color: #f35464;
+}
+
+#styleEditora {
+  text-align: center;
+}
