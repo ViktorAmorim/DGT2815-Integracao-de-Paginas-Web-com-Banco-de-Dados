@@ -15,7 +15,7 @@ interface LivroMongo {
   providedIn: 'root',
 })
 export class ControleLivros {
-  obterLivros = async (livro: Livro): Promise<LivroMongo[]> => {
+  obterLivros = async (): Promise<Livro[]> => {
     try {
       const resposta = await fetch(`${baseURL}`, {
         method: 'GET',
@@ -24,13 +24,16 @@ export class ControleLivros {
         },
       });
       const dados = await resposta.json();
-      const livros = dados.map((livro: any) => ({
-        _id: livro._id,
-        codEditora: livro.codEditora,
-        titulo: livro.titulo,
-        resumo: livro.resumo,
-        autores: livro.autores,
-      }));
+
+      const livros: Livro[] = dados.map((item: any) => {
+        const livro = new Livro();
+        livro.codigo = item._id ?? '';
+        livro.codEditora = item.codEditora;
+        livro.titulo = item.titulo;
+        livro.resumo = item.resumo;
+        livro.autores = item.autores;
+        return livro;
+      });
 
       return livros;
     } catch (error) {
@@ -38,7 +41,8 @@ export class ControleLivros {
       throw error;
     }
   };
-  excluirLivro = async (codigo: String): Promise<boolean> => {
+
+  excluirLivro = async (codigo: string): Promise<boolean> => {
     try {
       const resposta = await fetch(`${baseURL}/${codigo}`, {
         method: 'DELETE',
@@ -65,7 +69,9 @@ export class ControleLivros {
           headers: {
             'Content-Type': 'application/json',
           },
+          body: JSON.stringify(livroMongo),
         });
+
         return resposta.ok;
       } catch (error) {
         console.log('Erro ao inserir livro:', error);

@@ -20,6 +20,7 @@
   border: none;
   padding: 1px 15px;
   font-size: 1rem;
+  vertical-align: middle;
 }
 .table tbody td {
   vertical-align: middle;
@@ -34,7 +35,9 @@
 /* Estilos para o botão de exclusão */
 .btn-excluir {
   background-color: #f0192f;
+  color: white;
   border-color: #f0192f;
+  border: none;
   font-size: 0.8rem;
   border-radius: 4px;
   align-items: flex-start;

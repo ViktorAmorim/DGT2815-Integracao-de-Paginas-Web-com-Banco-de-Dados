@@ -32,9 +32,17 @@ export class LivroDados {
     this.editoras = this.servEditora.getEditoras();
   }
   public incluir = () => {
-    this.livro.autores = this.autoresForm.split('\n');
-    this.servLivros.incluirLivro(this.livro);
-    this.router.navigateByUrl('/lista');
+    const novoLivro = new Livro();
+    novoLivro.codigo = '';
+
+    this.livro.autores = this.autoresForm
+      .split('\n')
+      .map((autor) => autor.trim())
+      .filter(Boolean); // remove espaços em branco caso o usurio tenha digitado um espaço no final da linha
+
+    this.servLivros.incluirLivro(this.livro).then(() => {
+      this.router.navigateByUrl('/lista');
+    });
   };
 
   cancelar = () => {
